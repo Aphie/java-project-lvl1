@@ -14,12 +14,16 @@ version = '1.0-SNAPSHOT'
 
 mainClassName = 'hexlet.code.App'
 
-compileJava {
-    options.release = 16
-}
+//compileJava {
+//    options.release = 16
+//}
 
 repositories {
     mavenCentral()
+}
+
+run {
+    standardInput = System.in
 }
 
 
