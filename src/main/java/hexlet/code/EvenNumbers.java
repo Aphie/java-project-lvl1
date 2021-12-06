@@ -23,16 +23,16 @@ public class EvenNumbers {
                 System.out.println("Correct!");
                 checkResult++;
             } else if (((randomNumber % 2 != 0) && (answer.equals("yes")))) {
-                System.out.println("'yes' is wrong answer ;(. Correct answer was 'no'.\n" +
-                        "Let's try again, " + userName + "!");
+                System.out.println("'yes' is wrong answer ;(. Correct answer was 'no'.\n"
+                        + "Let's try again, " + userName + "!");
                 i = attemptsCount;
             } else if (((randomNumber % 2 == 0) && (answer.equals("no")))) {
-                System.out.println("'no' is wrong answer ;(. Correct answer was 'yes'.\n" +
-                                "Let's try again, " + userName + "!");
+                System.out.println("'no' is wrong answer ;(. Correct answer was 'yes'.\n"
+                        + "Let's try again, " + userName + "!");
                 i = attemptsCount;
             } else {
-                System.out.println("'" + answer + "' is wrong answer ;(. Correct answer were either 'yes' or 'no'.\n" +
-                        "Let's try again, " + userName + "!");
+                System.out.println("'" + answer + "' is wrong answer ;(. Correct answer were either 'yes' or 'no'.\n"
+                        + "Let's try again, " + userName + "!");
                 i = attemptsCount;
             }
         }
