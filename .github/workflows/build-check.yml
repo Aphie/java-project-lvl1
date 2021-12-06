@@ -17,4 +17,4 @@ jobs:
             distribution: 'temurin'
             java-version: '17'
             cache: 'gradle'
-      - run: ./gradlew clean build
+      - run: make project-build
