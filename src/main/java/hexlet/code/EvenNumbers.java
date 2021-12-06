@@ -8,8 +8,9 @@ public class EvenNumbers {
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         Random random = new Random();
         int checkResult = 0;
+        final int attemptsCount = 3;
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < attemptsCount; i++) {
             int randomNumber = random.nextInt();
             System.out.println("Question: " + randomNumber);
 
@@ -17,24 +18,24 @@ public class EvenNumbers {
             String answer = in.nextLine();
             System.out.println("Your answer: " + answer);
 
-            if (((randomNumber % 2 == 0) && (answer.equals("yes"))) || ((randomNumber % 2 != 0) && (answer.equals("no")))) {
+            if (((randomNumber % 2 == 0) && (answer.equals("yes")))
+                    || ((randomNumber % 2 != 0) && (answer.equals("no")))) {
                 System.out.println("Correct!");
-                checkResult ++;
+                checkResult++;
             } else if (((randomNumber % 2 != 0) && (answer.equals("yes")))) {
                 System.out.println("'yes' is wrong answer ;(. Correct answer was 'no'.");
-                i = 3;
+                i = attemptsCount;
             } else if (((randomNumber % 2 == 0) && (answer.equals("no")))) {
                 System.out.println("'no' is wrong answer ;(. Correct answer was 'yes'.");
-                i = 3;
+                i = attemptsCount;
             } else {
                 System.out.println("'" + answer + "' is wrong answer ;(. Correct answer were either 'yes' or 'no'.");
-                i = 3;
+                i = attemptsCount;
             }
         }
 
-        if (checkResult == 3) {
+        if (checkResult == attemptsCount) {
             System.out.println("Congratulations, " + userName + "!");
         }
     }
-
 }
