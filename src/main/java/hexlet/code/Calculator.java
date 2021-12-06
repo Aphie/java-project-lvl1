@@ -29,7 +29,7 @@ public class Calculator {
                 checkResult++;
             } else {
                 System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '"
-                        + calculationResult + "'.");
+                        + calculationResult + "'.\nLet's try again, " + userName + "!");
                 i = attemptsCount;
             }
 

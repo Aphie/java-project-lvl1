@@ -10,6 +10,11 @@ public class App {
         System.out.println("3 - Calc");
         System.out.println("0 - Exit");
 
+        final int greetMenu = 1;
+        final int evenGame = 2;
+        final int calculationGame = 3;
+        final int exitGame = 0;
+
         Scanner usersInput = new Scanner(System.in);
         String userChoice = usersInput.nextLine();
         System.out.println("Your choice: " + userChoice);
@@ -18,16 +23,18 @@ public class App {
         int userChoiceInt = Integer.parseInt(userChoice);
 
         switch (userChoiceInt) {
-            case 1:
+            case greetMenu:
                 String userName = Cli.welcomeMessage();
                 break;
-            case 2:
+            case evenGame:
                 userName = Cli.welcomeMessage();
                 EvenNumbers.checkEvenNumbers(userName);
                 break;
-            case 3:
+            case calculationGame:
                 userName = Cli.welcomeMessage();
                 Calculator.checkCalculations(userName);
+                break;
+            case exitGame:
                 break;
             default:
                 System.out.println("I'm sorry. I can't do this right now. Have to quit");
