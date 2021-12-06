@@ -5,3 +5,6 @@
 
 [![Build Status](https://github.com/Aphie/java-project-lvl1/workflows/build-check/badge.svg)](https://github.com/Aphie/java-project-lvl1/actions)
 
+Игра: "Проверка на чётность" - https://asciinema.org/a/DfTEcnhTiahLYR4PLOoHjCTo2
+
+
