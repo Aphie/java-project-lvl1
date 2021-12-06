@@ -7,6 +7,7 @@ public class App {
         System.out.println("Please enter the game number and press Enter.");
         System.out.println("1 - Greet");
         System.out.println("2 - Even");
+        System.out.println("3 - Calc");
         System.out.println("0 - Exit");
 
         Scanner usersInput = new Scanner(System.in);
@@ -18,16 +19,18 @@ public class App {
 
         switch (userChoiceInt) {
             case 1:
-                System.out.println("Welcome to the Brain Games!");
                 String userName = Cli.welcomeMessage();
                 break;
             case 2:
-                System.out.println("Welcome to the Brain Games!");
                 userName = Cli.welcomeMessage();
                 EvenNumbers.checkEvenNumbers(userName);
                 break;
+            case 3:
+                userName = Cli.welcomeMessage();
+                Calculator.checkCalculations(userName);
+                break;
             default:
-                System.out.println("I'm sorry. I can't do this right now");
+                System.out.println("I'm sorry. I can't do this right now. Have to quit");
         }
 
 
