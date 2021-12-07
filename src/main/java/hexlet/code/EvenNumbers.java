@@ -3,11 +3,10 @@ package hexlet.code;
 import java.util.Random;
 
 public class EvenNumbers {
-    public static void checkEvenNumbers(String userName) {
+    public static void checkEvenNumbers(String userName, int attemptsCount) {
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         Random random = new Random();
         int checkResult = 0;
-        final int attemptsCount = 3;
 
         for (int i = 0; i < attemptsCount; i++) {
             int randomNumber = random.nextInt();
@@ -35,8 +34,6 @@ public class EvenNumbers {
             }
         }
 
-        if (checkResult == attemptsCount) {
-            System.out.println("Congratulations, " + userName + "!");
-        }
+        Congratulations.congratulationsMessage(attemptsCount, checkResult, userName);
     }
 }

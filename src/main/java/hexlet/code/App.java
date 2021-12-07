@@ -6,12 +6,16 @@ public class App {
         System.out.println("1 - Greet");
         System.out.println("2 - Even");
         System.out.println("3 - Calc");
+        System.out.println("4 - GCD");
         System.out.println("0 - Exit");
+
 
         final int greetMenu = 1;
         final int evenGame = 2;
         final int calculationGame = 3;
+        final int gcdGame = 4;
         final int exitGame = 0;
+        final int attemptsCount = 3;
 
         String userChoice = UsersAnswer.answer();
         System.out.println("Your choice: " + userChoice);
@@ -25,11 +29,15 @@ public class App {
                 break;
             case evenGame:
                 userName = Cli.welcomeMessage();
-                EvenNumbers.checkEvenNumbers(userName);
+                EvenNumbers.checkEvenNumbers(userName, attemptsCount);
                 break;
             case calculationGame:
                 userName = Cli.welcomeMessage();
-                Calculator.checkCalculations(userName);
+                Calculator.checkCalculations(userName, attemptsCount);
+                break;
+            case gcdGame:
+                userName = Cli.welcomeMessage();
+                CommonDivisor.checkCommonDivisor(userName, attemptsCount);
                 break;
             case exitGame:
                 break;

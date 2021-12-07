@@ -7,4 +7,6 @@
 
 Игра: "Проверка на чётность" - https://asciinema.org/a/DfTEcnhTiahLYR4PLOoHjCTo2
 
+Игра: "НОД" - https://asciinema.org/a/Ldu3cGqL8y3zX6RVNqgTrBdkL
+
 

@@ -2,24 +2,22 @@ package hexlet.code;
 
 import java.util.Random;
 
-public class Calculator {
-    public static void checkCalculations(String userName, int attemptsCount) throws NumberFormatException {
-        System.out.println("What is the result of the expression?");
+public class CommonDivisor {
+    public static void checkCommonDivisor(String userName, int attemptsCount) throws NumberFormatException {
+        System.out.println("Find the greatest common divisor of given numbers.");
         Random random = new Random();
-        String[] signs = {"+", "-", "*"};
         int checkResult = 0;
         final int maxNumbers = 100;
 
         for (int i = 0; i < attemptsCount; i++) {
             int randomNumberOne = random.nextInt(maxNumbers);
             int randomNumberTwo = random.nextInt(maxNumbers);
-            int randomSign = random.nextInt(signs.length);
-            System.out.println("Question: " + randomNumberOne + signs[randomSign] + randomNumberTwo);
+            System.out.println("Question: " + randomNumberOne + " " + randomNumberTwo);
+
+            int calculationResult = findCommonDivisor(randomNumberOne, randomNumberTwo);
 
             String answer = UsersAnswer.answer();
             System.out.println("Your answer: " + answer);
-
-            int calculationResult = calculate(randomNumberOne, randomNumberTwo, signs[randomSign]);
 
             try {
                 if (Integer.parseInt(answer) == calculationResult) {
@@ -37,14 +35,17 @@ public class Calculator {
 
             Congratulations.congratulationsMessage(attemptsCount, checkResult, userName);
         }
+
     }
-    public static int calculate(int numberOne, int numberTwo, String sign) {
-        if (sign.equals("+")) {
-            return numberOne + numberTwo;
-        } else if (sign.equals("-")) {
-            return numberOne - numberTwo;
-        } else {
-            return numberOne * numberTwo;
+
+    public static int findCommonDivisor(int numberOne, int numberTwo) {
+        while (numberOne != 0 && numberTwo != 0) {
+            if (numberOne > numberTwo) {
+                numberOne = numberOne % numberTwo;
+            } else {
+                numberTwo = numberTwo % numberOne;
+            }
         }
+        return numberOne + numberTwo;
     }
 }
