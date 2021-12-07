@@ -1,7 +1,6 @@
 package hexlet.code;
 
 import java.util.Random;
-import java.util.Scanner;
 
 public class Calculator {
     public static void checkCalculations(String userName) {
@@ -18,8 +17,7 @@ public class Calculator {
             int randomSign = random.nextInt(signs.length);
             System.out.println("Question: " + randomNumberOne + signs[randomSign] + randomNumberTwo);
 
-            Scanner in = new Scanner(System.in);
-            String answer = in.nextLine();
+            String answer = UsersAnswer.answer();
             System.out.println("Your answer: " + answer);
 
             int calculationResult = calcutate(randomNumberOne, randomNumberTwo, signs[randomSign]);

@@ -1,7 +1,5 @@
 package hexlet.code;
 
-import java.util.Scanner;
-
 public class App {
     public static void main(String[] args) {
         System.out.println("Please enter the game number and press Enter.");
@@ -15,8 +13,7 @@ public class App {
         final int calculationGame = 3;
         final int exitGame = 0;
 
-        Scanner usersInput = new Scanner(System.in);
-        String userChoice = usersInput.nextLine();
+        String userChoice = UsersAnswer.answer();
         System.out.println("Your choice: " + userChoice);
         System.out.println();
 

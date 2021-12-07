@@ -1,7 +1,6 @@
 package hexlet.code;
 
 import java.util.Random;
-import java.util.Scanner;
 
 public class EvenNumbers {
     public static void checkEvenNumbers(String userName) {
@@ -14,8 +13,7 @@ public class EvenNumbers {
             int randomNumber = random.nextInt();
             System.out.println("Question: " + randomNumber);
 
-            Scanner in = new Scanner(System.in);
-            String answer = in.nextLine();
+            String answer = UsersAnswer.answer();
             System.out.println("Your answer: " + answer);
 
             if (((randomNumber % 2 == 0) && (answer.equals("yes")))
