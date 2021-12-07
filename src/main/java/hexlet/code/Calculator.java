@@ -3,7 +3,7 @@ package hexlet.code;
 import java.util.Random;
 
 public class Calculator {
-    public static void checkCalculations(String userName) {
+    public static void checkCalculations(String userName) throws NumberFormatException {
         System.out.println("What is the result of the expression?");
         Random random = new Random();
         String[] signs = {"+", "-", "*"};
@@ -22,13 +22,18 @@ public class Calculator {
 
             int calculationResult = calcutate(randomNumberOne, randomNumberTwo, signs[randomSign]);
 
-            if (Integer.parseInt(answer) == calculationResult) {
-                System.out.println("Correct!");
-                checkResult++;
-            } else {
-                System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '"
-                        + calculationResult + "'.\nLet's try again, " + userName + "!");
-                i = attemptsCount;
+            try {
+                if (Integer.parseInt(answer) == calculationResult) {
+                    System.out.println("Correct!");
+                    checkResult++;
+                } else {
+                    System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '"
+                            + calculationResult + "'.\nLet's try again, " + userName + "!");
+                    i = attemptsCount;
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("You entered wrong data. Have to quit");
+                break;
             }
 
             if (checkResult == attemptsCount) {
