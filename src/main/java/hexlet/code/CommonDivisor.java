@@ -19,23 +19,13 @@ public class CommonDivisor {
             String answer = UsersAnswer.answer();
             System.out.println("Your answer: " + answer);
 
-            try {
-                if (Integer.parseInt(answer) == calculationResult) {
-                    System.out.println("Correct!");
-                    checkResult++;
-                } else {
-                    System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '"
-                            + calculationResult + "'.\nLet's try again, " + userName + "!");
-                    i = attemptsCount;
-                }
-            } catch (NumberFormatException e) {
-                System.out.println("You entered wrong data. Have to quit");
-                break;
+            if (CheckResult.checkResultOfGame(answer, calculationResult, userName, attemptsCount)) {
+                checkResult++;
+            } else {
+                i = attemptsCount;
             }
-
-            Congratulations.congratulationsMessage(attemptsCount, checkResult, userName);
         }
-
+        Congratulations.congratulationsMessage(attemptsCount, checkResult, userName);
     }
 
     public static int findCommonDivisor(int numberOne, int numberTwo) {
