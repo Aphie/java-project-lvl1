@@ -1,4 +1,8 @@
-package hexlet.code;
+package hexlet.code.games;
+
+import hexlet.code.CheckResult;
+import hexlet.code.Congratulations;
+import hexlet.code.UsersAnswer;
 
 import java.util.Random;
 

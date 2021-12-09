@@ -1,5 +1,11 @@
 package hexlet.code;
 
+import hexlet.code.games.Calculator;
+import hexlet.code.games.CommonDivisor;
+import hexlet.code.games.EvenNumbers;
+import hexlet.code.games.PrimeNumber;
+import hexlet.code.games.Progression;
+
 public class App {
     public static void main(String[] args) {
         System.out.println("Please enter the game number and press Enter.");

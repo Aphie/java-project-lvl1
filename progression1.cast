@@ -73,7 +73,7 @@
 [72.91071, "o", "\r\n"]
 [72.910897, "o", "Your answer: 65\r\n"]
 [72.911353, "o", "Exception in thread \"main\" "]
-[72.911677, "o", "java.lang.ArrayIndexOutOfBoundsException: Index 5 out of bounds for length 5\r\n\tat hexlet.code.Progression.checkProgression(Progression.java:37)\r\n"]
+[72.911677, "o", "java.lang.ArrayIndexOutOfBoundsException: Index 5 out of bounds for length 5\r\n\tat hexlet.code.games.Progression.checkProgression(Progression.java:37)\r\n"]
 [72.912707, "o", "\tat hexlet.code.App.main(App.java:46)\r\n"]
 [72.921393, "o", "make: *** [Makefile:7: run-dist] Error 1\r\n"]
 [72.922261, "o", "\u001b]0;sandreyuk@CSPBNTB3026: /mnt/c/Users/s.andreyuk/IdeaProjects/hexletPr1/java-project-lvl1\u0007\u001b[01;32msandreyuk@CSPBNTB3026\u001b[00m:\u001b[01;34m/mnt/c/Users/s.andreyuk/IdeaProjects/hexletPr1/java-project-lvl1\u001b[00m$ "]
