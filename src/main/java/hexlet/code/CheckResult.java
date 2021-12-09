@@ -1,7 +1,7 @@
 package hexlet.code;
 
 public class CheckResult {
-    public static boolean checkResultOfGame(String answer, int calculationResult, String userName, int attemptsCount) {
+    public static boolean checkResultOfGame(String answer, int calculationResult, String userName) {
         boolean isCorrect = false;
         try {
             if (Integer.parseInt(answer) == calculationResult) {

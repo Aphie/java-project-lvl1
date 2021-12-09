@@ -21,7 +21,7 @@ public class Calculator {
 
             int calculationResult = calculate(randomNumberOne, randomNumberTwo, signs[randomSign]);
 
-            if (CheckResult.checkResultOfGame(answer, calculationResult, userName, attemptsCount)) {
+            if (CheckResult.checkResultOfGame(answer, calculationResult, userName)) {
                 checkResult++;
             } else {
                 i = attemptsCount;

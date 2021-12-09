@@ -19,7 +19,7 @@ public class CommonDivisor {
             String answer = UsersAnswer.answer();
             System.out.println("Your answer: " + answer);
 
-            if (CheckResult.checkResultOfGame(answer, calculationResult, userName, attemptsCount)) {
+            if (CheckResult.checkResultOfGame(answer, calculationResult, userName)) {
                 checkResult++;
             } else {
                 i = attemptsCount;

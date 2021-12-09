@@ -7,6 +7,7 @@ public class App {
         System.out.println("2 - Even");
         System.out.println("3 - Calc");
         System.out.println("4 - GCD");
+        System.out.println("5 - Progression");
         System.out.println("0 - Exit");
 
 
@@ -14,6 +15,7 @@ public class App {
         final int evenGame = 2;
         final int calculationGame = 3;
         final int gcdGame = 4;
+        final int progressionGame = 5;
         final int exitGame = 0;
         final int attemptsCount = 3;
 
@@ -38,6 +40,10 @@ public class App {
             case gcdGame:
                 userName = Cli.welcomeMessage();
                 CommonDivisor.checkCommonDivisor(userName, attemptsCount);
+                break;
+            case progressionGame:
+                userName = Cli.welcomeMessage();
+                Progression.checkProgression(userName, attemptsCount);
                 break;
             case exitGame:
                 break;

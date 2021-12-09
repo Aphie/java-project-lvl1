@@ -9,4 +9,6 @@
 
 Игра: "НОД" - https://asciinema.org/a/Ldu3cGqL8y3zX6RVNqgTrBdkL
 
+Игра: "Прогрессия" - https://asciinema.org/a/gtY6TwayCqvsRCx05dNK1QFBg
+
 
