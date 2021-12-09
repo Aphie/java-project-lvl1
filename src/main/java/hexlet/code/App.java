@@ -62,7 +62,5 @@ public class App {
             default:
                 System.out.println("I'm sorry. I can't do this right now. Have to quit");
         }
-
-
     }
 }
