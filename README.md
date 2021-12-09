@@ -11,4 +11,6 @@
 
 Игра: "Прогрессия" - https://asciinema.org/a/gtY6TwayCqvsRCx05dNK1QFBg
 
+Игра: "Простое ли число?" - https://asciinema.org/a/2Gn4kot3qiE1Ug0xwz9zFWhSp
+
 
