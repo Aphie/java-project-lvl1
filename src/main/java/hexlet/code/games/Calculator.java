@@ -18,7 +18,7 @@ public class Calculator {
             int randomNumberOne = random.nextInt(maxNumbers);
             int randomNumberTwo = random.nextInt(maxNumbers);
             int randomSign = random.nextInt(signs.length);
-            System.out.println("Question: " + randomNumberOne + signs[randomSign] + randomNumberTwo);
+            System.out.println("Question: " + randomNumberOne + " " + signs[randomSign] + " " + randomNumberTwo);
 
             String answer = UsersAnswer.answer();
             System.out.println("Your answer: " + answer);
