@@ -17,7 +17,6 @@ public class App {
         System.out.println("6 - Prime");
         System.out.println("0 - Exit");
 
-
         final int greetMenu = 1;
         final int evenGame = 2;
         final int calculationGame = 3;
