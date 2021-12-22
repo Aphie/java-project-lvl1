@@ -1,18 +1,31 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/Aphie/java-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/Aphie/java-project-lvl1/actions)
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
+[![Maintainability](https://api.codeclimate.com/v1/badges/25ea00bbdaec876aa24a/maintainability)](https://codeclimate.com/github/Aphie/java-project-lvl1/maintainability)
 
 [![Build Status](https://github.com/Aphie/java-project-lvl1/workflows/build-check/badge.svg)](https://github.com/Aphie/java-project-lvl1/actions)
 
-Игра: "Проверка на чётность" - https://asciinema.org/a/DfTEcnhTiahLYR4PLOoHjCTo2
+Игра: "Проверка на чётность" - 
 
-Игра: "Калькулятор" - https://asciinema.org/a/Wj20JnFoIa3DQBste2FMzSmxU
+[![asciicast](https://asciinema.org/a/kCxK8ug2VTpYbHj0hzOeTiX8G.svg)](https://asciinema.org/a/kCxK8ug2VTpYbHj0hzOeTiX8G)
 
-Игра: "НОД" - https://asciinema.org/a/Ldu3cGqL8y3zX6RVNqgTrBdkL
 
-Игра: "Прогрессия" - https://asciinema.org/a/gtY6TwayCqvsRCx05dNK1QFBg
+Игра: "Калькулятор" -
 
-Игра: "Простое ли число?" - https://asciinema.org/a/2Gn4kot3qiE1Ug0xwz9zFWhSp
+[![asciicast](https://asciinema.org/a/Z1L6NOozG85lA8daKP4dJ3NKm.svg)](https://asciinema.org/a/Z1L6NOozG85lA8daKP4dJ3NKm)
 
+
+Игра: "НОД" - 
+
+[![asciicast](https://asciinema.org/a/IvmqXrfzVMu47XxxkT9tQDwhS.svg)](https://asciinema.org/a/IvmqXrfzVMu47XxxkT9tQDwhS)
+
+
+Игра: "Прогрессия" -
+
+[![asciicast](https://asciinema.org/a/66RS3dYxd1003DsK0RUEWCMVr.svg)](https://asciinema.org/a/66RS3dYxd1003DsK0RUEWCMVr)
+
+
+Игра: "Простое ли число?" - 
+
+[![asciicast](https://asciinema.org/a/tRAi5QH96xWY3mbLcqvQNRFrY.svg)](https://asciinema.org/a/tRAi5QH96xWY3mbLcqvQNRFrY)
 

@@ -7,5 +7,6 @@ public class Cli {
         String userName = UsersAnswer.answer();
         System.out.println("Hello, " + userName + '!');
         return userName;
+
     }
 }
