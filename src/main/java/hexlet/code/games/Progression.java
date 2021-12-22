@@ -1,15 +1,15 @@
 package hexlet.code.games;
 
-import hexlet.code.CheckResult;
-import hexlet.code.Congratulations;
-import hexlet.code.UsersAnswer;
+import hexlet.code.Engine;
 
 import java.util.Random;
 
 public class Progression {
-    public static void checkProgression(String userName, int attemptsCount) {
-        System.out.println("What number is missing in the progression?");
-        int checkResult = 0;
+    public static void checkProgression(int attemptsCount) {
+        final int resultArraySize = 2;
+        String[][] results = new String[attemptsCount][resultArraySize];
+        String rules = "What number is missing in the progression?";
+
         int progressionLength;
         final int startProgression = 5;
 
@@ -27,24 +27,15 @@ public class Progression {
                     progressionNumbersToString[j] = "..";
                 }
             }
+            results[i][0] = progressionNumbersToString[0] + " ";
 
-            System.out.print("Question: ");
-            for (int k = 0; k < progressionLength; k++) {
-                System.out.print(progressionNumbersToString[k] + " ");
+            for (int k = 1; k < progressionLength; k++) {
+                results[i][0] += progressionNumbersToString[k] + " ";
             }
-            System.out.println();
+            results[i][1] = Integer.toString(progressionNumbers[randomMissingNumber]);
 
-            String answer = UsersAnswer.answer();
-            System.out.println("Your answer: " + answer);
-
-            if (CheckResult.checkResultOfGame(answer, progressionNumbers[randomMissingNumber],
-                    userName)) {
-                checkResult++;
-            } else {
-                i = attemptsCount;
-            }
         }
-        Congratulations.congratulationsMessage(attemptsCount, checkResult, userName);
+        Engine.launchGame(rules, results, attemptsCount);
     }
     public static int[] createProgression(int progressionLength) {
         final int maxNumberInProgression = 100;

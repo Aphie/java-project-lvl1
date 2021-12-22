@@ -1,37 +1,26 @@
 package hexlet.code.games;
 
-import hexlet.code.CheckResult;
-import hexlet.code.Congratulations;
-import hexlet.code.UsersAnswer;
+import hexlet.code.Engine;
 
 import java.util.Random;
 
 public class Calculator {
-    public static void checkCalculations(String userName, int attemptsCount) throws NumberFormatException {
-        System.out.println("What is the result of the expression?");
+    public static void checkCalculations(int attemptsCount) throws NumberFormatException {
+        final int resultArraySize = 2;
+        String[][] results = new String[attemptsCount][resultArraySize];
+        String rules = "What is the result of the expression?";
         Random random = new Random();
         String[] signs = {"+", "-", "*"};
-        int checkResult = 0;
         final int maxNumbers = 100;
 
         for (int i = 0; i < attemptsCount; i++) {
             int randomNumberOne = random.nextInt(maxNumbers);
             int randomNumberTwo = random.nextInt(maxNumbers);
             int randomSign = random.nextInt(signs.length);
-            System.out.println("Question: " + randomNumberOne + " " + signs[randomSign] + " " + randomNumberTwo);
-
-            String answer = UsersAnswer.answer();
-            System.out.println("Your answer: " + answer);
-
-            int calculationResult = calculate(randomNumberOne, randomNumberTwo, signs[randomSign]);
-
-            if (CheckResult.checkResultOfGame(answer, calculationResult, userName)) {
-                checkResult++;
-            } else {
-                i = attemptsCount;
-            }
+            results[i][0] = randomNumberOne + " " + signs[randomSign] + " " + randomNumberTwo;
+            results[i][1] = Integer.toString(calculate(randomNumberOne, randomNumberTwo, signs[randomSign]));
         }
-        Congratulations.congratulationsMessage(attemptsCount, checkResult, userName);
+        Engine.launchGame(rules, results, attemptsCount);
     }
     public static int calculate(int numberOne, int numberTwo, String sign) {
         if (sign.equals("+")) {

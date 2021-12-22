@@ -1,35 +1,24 @@
 package hexlet.code.games;
 
-import hexlet.code.CheckResult;
-import hexlet.code.Congratulations;
-import hexlet.code.UsersAnswer;
+import hexlet.code.Engine;
 
 import java.util.Random;
 
 public class CommonDivisor {
-    public static void checkCommonDivisor(String userName, int attemptsCount) throws NumberFormatException {
-        System.out.println("Find the greatest common divisor of given numbers.");
+    public static void checkCommonDivisor(int attemptsCount) {
+        final int resultArraySize = 2;
+        String[][] results = new String[attemptsCount][resultArraySize];
+        String rules = "Find the greatest common divisor of given numbers.";
         Random random = new Random();
-        int checkResult = 0;
         final int maxNumbers = 100;
 
         for (int i = 0; i < attemptsCount; i++) {
             int randomNumberOne = random.nextInt(maxNumbers);
             int randomNumberTwo = random.nextInt(maxNumbers);
-            System.out.println("Question: " + randomNumberOne + " " + randomNumberTwo);
-
-            int calculationResult = findCommonDivisor(randomNumberOne, randomNumberTwo);
-
-            String answer = UsersAnswer.answer();
-            System.out.println("Your answer: " + answer);
-
-            if (CheckResult.checkResultOfGame(answer, calculationResult, userName)) {
-                checkResult++;
-            } else {
-                i = attemptsCount;
-            }
+            results[i][0] = randomNumberOne + " " + randomNumberTwo;
+            results[i][1] = Integer.toString(findCommonDivisor(randomNumberOne, randomNumberTwo));
         }
-        Congratulations.congratulationsMessage(attemptsCount, checkResult, userName);
+        Engine.launchGame(rules, results, attemptsCount);
     }
 
     public static int findCommonDivisor(int numberOne, int numberTwo) {
