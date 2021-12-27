@@ -2,19 +2,15 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
-import java.util.Random;
-
 public class PrimeNumber {
-    public static void checkPrimeNumber(int attemptsCount) {
+    public static final String RULES = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+
+    public static void checkPrimeNumber() {
         final int resultArraySize = 2;
-        String[][] results = new String[attemptsCount][resultArraySize];
-        String rules = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-        Random random = new Random();
+        String[][] results = new String[Engine.ATTEMPTSCOUNT][resultArraySize];
 
-        final int maxNumbers = 100;
-
-        for (int i = 0; i < attemptsCount; i++) {
-            int randomNumber = random.nextInt(maxNumbers);
+        for (int i = 0; i < Engine.ATTEMPTSCOUNT; i++) {
+            int randomNumber = Utils.generateRandom();
             results[i][0] = Integer.toString(randomNumber);
 
             if (isPrimeNumber(randomNumber)) {
@@ -23,7 +19,7 @@ public class PrimeNumber {
                 results[i][1] = "no";
             }
         }
-        Engine.launchGame(rules, results, attemptsCount);
+        System.out.println(Engine.launchGame(RULES, results));
 
     }
     public static boolean isPrimeNumber(int number) {

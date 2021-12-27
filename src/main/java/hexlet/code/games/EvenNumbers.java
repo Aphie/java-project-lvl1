@@ -2,17 +2,15 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
-import java.util.Random;
-
 public class EvenNumbers {
-    public static void checkEvenNumbers(int attemptsCount) {
+    public static final String RULES = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+
+    public static void checkEvenNumbers() {
         final int resultArraySize = 2;
-        String[][] results = new String[attemptsCount][resultArraySize];
-        String rules = "Answer 'yes' if the number is even, otherwise answer 'no'.";
-        Random random = new Random();
+        String[][] results = new String[Engine.ATTEMPTSCOUNT][resultArraySize];
 
         for (int i = 0; i < results.length; i++) {
-            int randomNumber = random.nextInt();
+            int randomNumber = Utils.generateRandom();
             results[i][0] = Integer.toString(randomNumber);
             if (randomNumber % 2 == 0) {
                 results[i][1] = "yes";
@@ -20,6 +18,7 @@ public class EvenNumbers {
                 results[i][1] = "no";
             }
         }
-        Engine.launchGame(rules, results, attemptsCount);
+
+        System.out.println(Engine.launchGame(RULES, results));
     }
 }

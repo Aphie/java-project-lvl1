@@ -6,7 +6,17 @@ import hexlet.code.games.EvenNumbers;
 import hexlet.code.games.PrimeNumber;
 import hexlet.code.games.Progression;
 
+import java.util.Scanner;
+
 public class App {
+    static final String GREETMENU = "1";
+    static final String EVENGAME = "2";
+    static final String CALCULATIONGAME = "3";
+    static final String GCDGAME = "4";
+    static final String PROGRESSIONGAME = "5";
+    static final String PRIMEGAME = "6";
+    static final String EXITGAME = "0";
+
     public static void main(String[] args) {
         System.out.println("Please enter the game number and press Enter.");
         System.out.println("1 - Greet");
@@ -17,42 +27,31 @@ public class App {
         System.out.println("6 - Prime");
         System.out.println("0 - Exit");
 
-        String userChoice = UsersAnswer.answer();
+        Scanner in = new Scanner(System.in);
+        String userChoice = in.nextLine();
         System.out.println("Your choice: " + userChoice);
         System.out.println();
 
-        int userChoiceInt = Integer.parseInt(userChoice);
-
-        final int greetMenu = 1;
-        final int evenGame = 2;
-        final int calculationGame = 3;
-        final int gcdGame = 4;
-        final int progressionGame = 5;
-        final int primeGame = 6;
-        final int exitGame = 0;
-
-        final int attemptsCount = 3;
-
-        switch (userChoiceInt) {
-            case greetMenu:
+        switch (userChoice) {
+            case GREETMENU:
                 String userName = Cli.welcomeMessage();
                 break;
-            case evenGame:
-                EvenNumbers.checkEvenNumbers(attemptsCount);
+            case EVENGAME:
+                EvenNumbers.checkEvenNumbers();
                 break;
-            case calculationGame:
-                Calculator.checkCalculations(attemptsCount);
+            case CALCULATIONGAME:
+                Calculator.checkCalculations();
                 break;
-            case gcdGame:
-                CommonDivisor.checkCommonDivisor(attemptsCount);
+            case GCDGAME:
+                CommonDivisor.checkCommonDivisor();
                 break;
-            case progressionGame:
-                Progression.checkProgression(attemptsCount);
+            case PROGRESSIONGAME:
+                Progression.checkProgression();
                 break;
-            case primeGame:
-                PrimeNumber.checkPrimeNumber(attemptsCount);
+            case PRIMEGAME:
+                PrimeNumber.checkPrimeNumber();
                 break;
-            case exitGame:
+            case EXITGAME:
                 break;
             default:
                 System.out.println("I'm sorry. I can't do this right now. Have to quit");

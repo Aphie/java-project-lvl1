@@ -2,18 +2,17 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
-import java.util.Random;
-
 public class Progression {
-    public static void checkProgression(int attemptsCount) {
+    public static final String RULES = "What number is missing in the progression?";
+
+    public static void checkProgression() {
         final int resultArraySize = 2;
-        String[][] results = new String[attemptsCount][resultArraySize];
-        String rules = "What number is missing in the progression?";
+        String[][] results = new String[Engine.ATTEMPTSCOUNT][resultArraySize];
 
         int progressionLength;
         final int startProgression = 5;
 
-        for (int i = 0; i < attemptsCount; i++) {
+        for (int i = 0; i < Engine.ATTEMPTSCOUNT; i++) {
 
             progressionLength = startProgression + (int) (Math.random() * startProgression);
             int[] progressionNumbers = createProgression(progressionLength);
@@ -35,14 +34,12 @@ public class Progression {
             results[i][1] = Integer.toString(progressionNumbers[randomMissingNumber]);
 
         }
-        Engine.launchGame(rules, results, attemptsCount);
+        System.out.println(Engine.launchGame(RULES, results));
     }
     public static int[] createProgression(int progressionLength) {
-        final int maxNumberInProgression = 100;
-        Random random = new Random();
         int[] progressionNumbers = new int[progressionLength];
-        progressionNumbers[0] = random.nextInt(maxNumberInProgression);
-        progressionNumbers[1] = random.nextInt(maxNumberInProgression);
+        progressionNumbers[0] = Utils.generateRandom();
+        progressionNumbers[1] = Utils.generateRandom();
 
         int progressionStep = progressionNumbers[1] - progressionNumbers[0];
 

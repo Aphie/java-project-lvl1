@@ -2,23 +2,20 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
-import java.util.Random;
-
 public class CommonDivisor {
-    public static void checkCommonDivisor(int attemptsCount) {
-        final int resultArraySize = 2;
-        String[][] results = new String[attemptsCount][resultArraySize];
-        String rules = "Find the greatest common divisor of given numbers.";
-        Random random = new Random();
-        final int maxNumbers = 100;
+    public static final String RULES = "Find the greatest common divisor of given numbers.";
 
-        for (int i = 0; i < attemptsCount; i++) {
-            int randomNumberOne = random.nextInt(maxNumbers);
-            int randomNumberTwo = random.nextInt(maxNumbers);
+    public static void checkCommonDivisor() {
+        final int resultArraySize = 2;
+        String[][] results = new String[Engine.ATTEMPTSCOUNT][resultArraySize];
+
+        for (int i = 0; i < Engine.ATTEMPTSCOUNT; i++) {
+            int randomNumberOne = Utils.generateRandom();
+            int randomNumberTwo = Utils.generateRandom();
             results[i][0] = randomNumberOne + " " + randomNumberTwo;
             results[i][1] = Integer.toString(findCommonDivisor(randomNumberOne, randomNumberTwo));
         }
-        Engine.launchGame(rules, results, attemptsCount);
+        System.out.println(Engine.launchGame(RULES, results));
     }
 
     public static int findCommonDivisor(int numberOne, int numberTwo) {

@@ -1,29 +1,29 @@
 package hexlet.code;
 
+import java.util.Scanner;
+
 public class Engine {
-    public static void launchGame(String rules, String[][] results, int attemptsCount) {
-        int checkResult = 0;
+    public static final int ATTEMPTSCOUNT = 3;
+
+    public static String launchGame(String rules, String[][] results) {
         String userName = Cli.welcomeMessage();
 
         System.out.println(rules);
 
-        for (int i = 0; i < attemptsCount; i++) {
+        for (int i = 0; i < ATTEMPTSCOUNT; i++) {
             System.out.println("Question: " + results[i][0]);
 
-            String answer = UsersAnswer.answer();
+            Scanner in = new Scanner(System.in);
+            String answer = in.nextLine();
             System.out.println("Your answer: " + answer);
 
             if (answer.equals(results[i][1])) {
                 System.out.println("Correct!");
-                checkResult++;
             } else {
-                System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '"
+                return ("'" + answer + "' is wrong answer ;(. Correct answer was '"
                         + results[i][1] + "'.\nLet's try again, " + userName + "!");
-                i = attemptsCount;
             }
-
-            Congratulations.congratulationsMessage(attemptsCount, checkResult, userName);
-
         }
+        return ("Congratulations, " + userName + "!");
     }
 }
