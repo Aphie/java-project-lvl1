@@ -34,22 +34,22 @@ public class App {
 
         switch (userChoice) {
             case GREETMENU:
-                String userName = Cli.welcomeMessage();
+                Cli.welcomeMessage();
                 break;
             case EVENGAME:
-                EvenNumbers.checkEvenNumbers();
+                EvenNumbers.runEvenNumbers();
                 break;
             case CALCULATIONGAME:
-                Calculator.checkCalculations();
+                Calculator.runCalculations();
                 break;
             case GCDGAME:
-                CommonDivisor.checkCommonDivisor();
+                CommonDivisor.runCommonDivisor();
                 break;
             case PROGRESSIONGAME:
-                Progression.checkProgression();
+                Progression.runProgression();
                 break;
             case PRIMEGAME:
-                PrimeNumber.checkPrimeNumber();
+                PrimeNumber.runPrimeNumber();
                 break;
             case EXITGAME:
                 break;

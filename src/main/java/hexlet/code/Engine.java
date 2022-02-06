@@ -6,15 +6,19 @@ public class Engine {
     public static final int ATTEMPTSCOUNT = 3;
 
     public static String launchGame(String rules, String[][] results) {
-        String userName = Cli.welcomeMessage();
+        System.out.println("Welcome to the Brain Games!");
+        System.out.print("May I have your name? ");
+        Scanner inUserName = new Scanner(System.in);
+        String userName = inUserName.nextLine();
+        System.out.println("Hello, " + userName + '!');
 
         System.out.println(rules);
 
         for (int i = 0; i < ATTEMPTSCOUNT; i++) {
             System.out.println("Question: " + results[i][0]);
 
-            Scanner in = new Scanner(System.in);
-            String answer = in.nextLine();
+            Scanner inAnswer = new Scanner(System.in);
+            String answer = inAnswer.nextLine();
             System.out.println("Your answer: " + answer);
 
             if (answer.equals(results[i][1])) {
