@@ -8,7 +8,7 @@ public class EvenNumbers {
 
     public static void runEvenNumbers() {
         final int resultArraySize = 2;
-        String[][] results = new String[Engine.ATTEMPTSCOUNT][resultArraySize];
+        String[][] results = new String[Engine.ATTEMPTS_COUNT][resultArraySize];
 
         for (int i = 0; i < results.length; i++) {
             int randomNumber = Utils.generateRandom();

@@ -11,13 +11,13 @@ public class Calculator {
 
     public static void runCalculations() throws NumberFormatException {
         final int resultArraySize = 2;
-        String[][] results = new String[Engine.ATTEMPTSCOUNT][resultArraySize];
+        String[][] results = new String[Engine.ATTEMPTS_COUNT][resultArraySize];
         Random random = new Random();
 
-        for (int i = 0; i < Engine.ATTEMPTSCOUNT; i++) {
+        for (int i = 0; i < Engine.ATTEMPTS_COUNT; i++) {
             int randomNumberOne = Utils.generateRandom();
             int randomNumberTwo = Utils.generateRandom();
-            int randomSign = random.nextInt(SIGNS.length);
+            int randomSign = Utils.generateRandom(SIGNS.length);
             results[i][0] = randomNumberOne + " " + SIGNS[randomSign] + " " + randomNumberTwo;
             results[i][1] = Integer.toString(calculate(randomNumberOne, randomNumberTwo, SIGNS[randomSign]));
         }
@@ -27,17 +27,13 @@ public class Calculator {
         int calculationResult = -1;
         switch (sign) {
             case '+':
-                calculationResult = numberOne + numberTwo;
-                break;
+                return (numberOne + numberTwo);
             case '-':
-                calculationResult = numberOne - numberTwo;
-                break;
+                return (numberOne - numberTwo);
             case '*':
-                calculationResult = numberOne * numberTwo;
-                break;
+                return (numberOne * numberTwo);
             default:
                 throw new Error("This sign isn't added to game yet");
         }
-        return calculationResult;
     }
 }

@@ -8,9 +8,9 @@ public class PrimeNumber {
 
     public static void runPrimeNumber() {
         final int resultArraySize = 2;
-        String[][] results = new String[Engine.ATTEMPTSCOUNT][resultArraySize];
+        String[][] results = new String[Engine.ATTEMPTS_COUNT][resultArraySize];
 
-        for (int i = 0; i < Engine.ATTEMPTSCOUNT; i++) {
+        for (int i = 0; i < Engine.ATTEMPTS_COUNT; i++) {
             int randomNumber = Utils.generateRandom();
             results[i][0] = Integer.toString(randomNumber);
             results[i][1] = isPrimeNumber(randomNumber) ? "yes" : "no";

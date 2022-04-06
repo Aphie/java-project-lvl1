@@ -8,9 +8,9 @@ public class CommonDivisor {
 
     public static void runCommonDivisor() {
         final int resultArraySize = 2;
-        String[][] results = new String[Engine.ATTEMPTSCOUNT][resultArraySize];
+        String[][] results = new String[Engine.ATTEMPTS_COUNT][resultArraySize];
 
-        for (int i = 0; i < Engine.ATTEMPTSCOUNT; i++) {
+        for (int i = 0; i < Engine.ATTEMPTS_COUNT; i++) {
             int randomNumberOne = Utils.generateRandom();
             int randomNumberTwo = Utils.generateRandom();
             results[i][0] = randomNumberOne + " " + randomNumberTwo;

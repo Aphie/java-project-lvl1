@@ -15,6 +15,6 @@ public class Utils {
 
     public static int generateRandom(int minNumber, int maxNumber) {
         Random random = new Random();
-        return random.nextInt(((maxNumber - minNumber) + 1) + minNumber);
+        return random.nextInt(maxNumber - minNumber + 1) + minNumber;
     }
 }

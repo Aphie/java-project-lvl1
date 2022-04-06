@@ -34,7 +34,7 @@ public class App {
 
         switch (userChoice) {
             case GREETMENU:
-                Cli.welcomeMessage();
+                Cli.sayHello();
                 break;
             case EVENGAME:
                 EvenNumbers.runEvenNumbers();

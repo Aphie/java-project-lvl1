@@ -5,24 +5,23 @@ import hexlet.code.Utils;
 
 public class Progression {
     public static final String RULES = "What number is missing in the progression?";
-    public static final int PROGRESSIONMAXSTEP = 50;
+    public static final int PROGRESSION_MAX_STEP = 50;
+    public static final int MIN_PROGRESSION_LENGTH = 5;
+    public static final int MAX_PROGRESSION_LENGTH = 10;
 
     public static void runProgression() {
         final int resultArraySize = 2;
-        String[][] results = new String[Engine.ATTEMPTSCOUNT][resultArraySize];
+        String[][] results = new String[Engine.ATTEMPTS_COUNT][resultArraySize];
 
-        int progressionLength;
-        final int startProgression = 5;
+        for (int i = 0; i < Engine.ATTEMPTS_COUNT; i++) {
 
-        for (int i = 0; i < Engine.ATTEMPTSCOUNT; i++) {
-
-            progressionLength = startProgression + (int) (Math.random() * startProgression);
+            int progressionLength = Utils.generateRandom(MIN_PROGRESSION_LENGTH, MAX_PROGRESSION_LENGTH);
             int[] progressionNumbers = new int[progressionLength];
             int firstProgressionElement = Utils.generateRandom();
-            int progressionStep = Utils.generateRandom(PROGRESSIONMAXSTEP);
+            int progressionStep = Utils.generateRandom(PROGRESSION_MAX_STEP);
             progressionNumbers = createProgression(firstProgressionElement, progressionStep, progressionLength);
 
-            int randomMissingNumber = (int) (Math.random() * progressionLength);
+            int randomMissingNumber = Utils.generateRandom(progressionLength);
 
             results[i][0] = returnProgressionWithMissingNumber(progressionNumbers,
                     randomMissingNumber);
